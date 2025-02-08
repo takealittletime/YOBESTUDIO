@@ -26,3 +26,18 @@ export const SpoqaHanSansNeo = localFont({
   display: "swap",
   variable: "--font-spoqa-han-sans-neo",
 });
+
+export const HelveticaWorld = localFont({
+  src: [
+    {
+      path: "../../public/fonts/HelveticaWorld-Regular.ttf",
+      weight: "400",
+    },
+    {
+      path: "../../public/fonts/HelveticaWorld-Bold.ttf",
+      weight: "700",
+    },
+  ],
+  display: "swap",
+  variable: "--font-helvetica-world",
+});
