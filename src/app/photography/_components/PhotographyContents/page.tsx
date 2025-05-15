@@ -17,6 +17,8 @@ export default function PhotographyContents() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImages, setCurrentImages] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  // Track loaded thumbnail URLs for shimmer effect
+  const [loadedThumbs, setLoadedThumbs] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     const fetchThumbs = async () => {
@@ -103,13 +105,21 @@ export default function PhotographyContents() {
               className="group relative aspect-[285/356] w-full cursor-pointer bg-slate-300"
               onClick={() => openModal(folder)}
             >
-              <Image
-                src={thumbUrl}
-                alt={`Folder ${folder}`}
-                fill
-                sizes="(max-width: 768px) 100vw, 285px"
-                className="object-cover"
-              />
+              <div className="relative size-full">
+                {!loadedThumbs.has(thumbUrl) && (
+                  <div className="shimmer absolute inset-0 z-0" />
+                )}
+                <Image
+                  src={thumbUrl}
+                  alt={`Folder ${folder}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 285px"
+                  className="z-10 object-cover"
+                  onLoad={() =>
+                    setLoadedThumbs((prev) => new Set(prev).add(thumbUrl))
+                  }
+                />
+              </div>
               <div className="absolute inset-0 bg-white opacity-0 transition-opacity duration-200 group-hover:opacity-50"></div>
             </div>
           ))}
