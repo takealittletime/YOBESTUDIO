@@ -34,7 +34,7 @@ export default async function HomeContent() {
         ) : (
           <div className="size-full bg-black"></div>
         )}
-        <div className="absolute left-0 top-0 z-10 flex h-screen w-screen flex-col items-center justify-center bg-black/80">
+        <div className="items-left absolute left-0 top-0 z-10 flex h-screen w-screen flex-col justify-center bg-black/80">
           <span className="text-8xl">YOBE STUDIO</span>
           <div className="text-4xl text-white">
             <Link href="/photography">
