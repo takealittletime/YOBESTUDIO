@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="flex-col items-center justify-center text-center">
         <p className="text-sm">© YOBE STUDIO. All rights reserved.</p>
         <p className="text-sm">Instagram: @yobe_studio</p>
-        <p className="text-sm">developed by. @takealittle.time</p>
+        <p className="text-sm">This page is developed by. @takealittle.time</p>
       </div>
     </div>
   );

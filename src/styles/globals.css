@@ -8,6 +8,7 @@
 
 html,
 body {
+  overscroll-behavior-y: none;
   background-color: white;
   color: var(--primary-color);
   font-family: var(--font-helvetica-world), sans-serif;

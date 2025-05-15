@@ -28,6 +28,7 @@
         "endOfLine": "auto"
       }
     ],
+    "tailwindcss/prefer-shortcuts": "off",
     "jsx-a11y/label-has-associated-control": [
       "error",
       {
