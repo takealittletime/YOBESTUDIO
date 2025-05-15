@@ -1,7 +1,7 @@
 import Footer from "@/components/ui/footer/footer";
 import Header from "@/components/ui/header/header";
 
-import PhotographyContents from "./_components/PhotographyContents/page";
+import PhotographyContents from "./_components/PhotographyContents/PhotographyContent";
 
 export default function Photography() {
   return (
