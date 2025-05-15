@@ -106,15 +106,13 @@ export default function PhotographyContents() {
               onClick={() => openModal(folder)}
             >
               <div className="relative size-full">
-                {!loadedThumbs.has(thumbUrl) && (
-                  <div className="shimmer z-5 absolute inset-0" />
-                )}
                 <Image
                   src={thumbUrl}
                   alt={`Folder ${folder}`}
-                  fill
+                  width={800}
+                  height={1000}
                   sizes="(max-width: 768px) 100vw, 285px"
-                  className="z-10 object-cover"
+                  className="z-10 size-full object-cover"
                   onLoad={() =>
                     setLoadedThumbs((prev) => new Set(prev).add(thumbUrl))
                   }
