@@ -20,7 +20,7 @@ export default async function HomeContent() {
     : null;
 
   return (
-    <div className="h-screen flex-col bg-black">
+    <div className="min-h-screen flex-col bg-black">
       <div className="relative bg-black p-8 pb-20">
         {publicUrl ? (
           <video
@@ -37,9 +37,14 @@ export default async function HomeContent() {
         <div className="items-left absolute left-0 top-0 z-10 flex h-screen w-screen flex-col justify-center bg-black/80">
           <span className="text-8xl">YOBE STUDIO</span>
           <div className="text-4xl text-white">
+            <span>Click</span>
             <Link href="/photography">
-              <span className="cursor-pointer text-white hover:text-zinc-50 hover:opacity-20">
-                Click Here
+              <span
+                className="
+              cursor-pointer hover:text-zinc-50 hover:opacity-20"
+                style={{ color: "rgba(0,71,255,1)" }}
+              >
+                Here
               </span>
             </Link>
             <span> to start your journey...</span>

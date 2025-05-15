@@ -55,7 +55,7 @@ export default function Header() {
         top-0
         z-50 
         flex 
-        h-screen
+        min-h-screen
         w-screen 
         flex-col
         bg-black/70
