@@ -40,17 +40,24 @@ export default function PhotographyContents() {
       const thumbs = (
         await Promise.all(
           folderNames.map(async (folder) => {
+            // Use public URL with transform parameters for a 285x356 cover thumbnail
             const { data: publicData } = supabase.storage
               .from("ybst-photo")
               .getPublicUrl(`${folder}/1.jpg`);
 
-            const thumbUrl = publicData?.publicUrl;
-            if (!thumbUrl) return null;
+            // const thumbUrl = publicData?.publicUrl;
+            // if (!thumbUrl) return null;
 
-            return {
-              folder,
-              thumbUrl,
-            };
+            // return {
+            //   folder,
+            //   thumbUrl,
+            // };
+
+            const url = publicData?.publicUrl
+              ? `${publicData.publicUrl}?width=800&height=1000&resize=cover`
+              : null;
+            if (!url) return null;
+            return { folder, thumbUrl: url };
           }),
         )
       ).filter((thumb) => thumb !== null);
