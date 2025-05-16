@@ -53,7 +53,7 @@ export default function Header() {
         fixed
         left-0
         top-0
-        z-50 
+        z-10 
         flex 
         min-h-screen
         w-screen 
@@ -69,14 +69,14 @@ export default function Header() {
         >
           <Link href="/" onClick={() => setMenuOpen(false)}>
             <span
-              className={`py-1 ${pathname === "/" ? "font-light text-[rgba(0,71,255,1)]" : "font-light"}`}
+              className={`py-1 ${pathname === "/" ? "font-light text-[rgba(0,71,255,1)]" : "font-light hover:opacity-50"}`}
             >
               HOME
             </span>
           </Link>
           <Link href="/photography" onClick={() => setMenuOpen(false)}>
             <span
-              className={`py-1 ${pathname === "/photography" ? "font-light text-[rgba(0,71,255,1)]" : "font-light"}`}
+              className={`py-1 ${pathname === "/photography" ? "font-light text-[rgba(0,71,255,1)]" : "font-light hover:opacity-50"}`}
             >
               Photography
             </span>
