@@ -112,13 +112,13 @@ export default function PhotographyContents() {
                   width={800}
                   height={1000}
                   sizes="(max-width: 768px) 100vw, 285px"
-                  className="z-10 size-full object-cover"
+                  className="z-5 size-full object-cover"
                   onLoad={() =>
                     setLoadedThumbs((prev) => new Set(prev).add(thumbUrl))
                   }
                 />
               </div>
-              <div className="absolute inset-0 z-50 bg-white opacity-0 transition-opacity duration-200 group-hover:opacity-30"></div>
+              <div className="z-6 absolute inset-0 bg-white opacity-0 transition-opacity duration-200 group-hover:opacity-30"></div>
             </div>
           ))}
       </div>
