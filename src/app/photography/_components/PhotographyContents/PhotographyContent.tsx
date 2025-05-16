@@ -24,7 +24,7 @@ export default function PhotographyContents() {
     const fetchThumbs = async () => {
       const { data: folders, error } = await supabase.storage
         .from("ybst-photo")
-        .list("", { limit: 100, sortBy: { column: "name", order: "asc" } });
+        .list("", { limit: 100, sortBy: { column: "name", order: "desc" } });
 
       if (error) {
         return;
