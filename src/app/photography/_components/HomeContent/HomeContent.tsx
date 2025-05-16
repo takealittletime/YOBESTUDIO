@@ -20,15 +20,15 @@ export default async function HomeContent() {
     : null;
 
   return (
-    <div className="min-h-screen flex-col bg-black">
-      <div className="relative bg-black p-8 pb-20">
+    <div className="min-h-screen bg-black">
+      <div className="relative bg-black">
         {publicUrl ? (
           <video
             autoPlay
             muted
             playsInline
             loop
-            className="absolute left-0 top-0 h-screen object-cover"
+            className="absolute left-0 top-0 h-screen w-screen object-cover"
             src={publicUrl}
           />
         ) : (
