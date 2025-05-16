@@ -45,19 +45,19 @@ export default function PhotographyContents() {
               .from("ybst-photo")
               .getPublicUrl(`${folder}/1.jpg`);
 
-            // const thumbUrl = publicData?.publicUrl;
-            // if (!thumbUrl) return null;
+            const thumbUrl = publicData?.publicUrl;
+            if (!thumbUrl) return null;
 
-            // return {
-            //   folder,
-            //   thumbUrl,
-            // };
+            return {
+              folder,
+              thumbUrl,
+            };
 
-            const url = publicData?.publicUrl
-              ? `${publicData.publicUrl}?width=800&height=1000&resize=cover`
-              : null;
-            if (!url) return null;
-            return { folder, thumbUrl: url };
+            // const url = publicData?.publicUrl
+            //   ? `${publicData.publicUrl}?width=800&height=1000&resize=cover`
+            //   : null;
+            // if (!url) return null;
+            // return { folder, thumbUrl: url };
           }),
         )
       ).filter((thumb) => thumb !== null);
@@ -78,6 +78,7 @@ export default function PhotographyContents() {
         .sort(
           (a, b) => Number(a.name.split(".")[0]) - Number(b.name.split(".")[0]),
         )
+        .filter((file) => file.name !== "1.jpg")
         .map((file) => {
           const publicUrlData = supabase.storage
             .from("ybst-photo")
