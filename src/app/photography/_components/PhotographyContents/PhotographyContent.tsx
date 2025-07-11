@@ -35,7 +35,8 @@ export default function PhotographyContents() {
           (item) =>
             item.name !== "0" && item.name !== "" && item.name.match(/^\d+$/),
         )
-        .map((item) => item.name);
+        .map((item) => item.name)
+        .sort((a, b) => Number(b) - Number(a));
 
       const thumbs = (
         await Promise.all(
